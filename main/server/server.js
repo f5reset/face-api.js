@@ -19,7 +19,7 @@ app.get('/', (req, res) => res.redirect('/webcam_face_detection'))
 app.get('/webcam_face_detection', (req, res) => res.sendFile(path.join(viewsDir, 'webcamFaceDetection.html')))
 app.get('/bbt_face_recognition', (req, res) => res.sendFile(path.join(viewsDir, 'bbtFaceRecognition.html')))
 app.get('/face_recognition', (req, res) => res.sendFile(path.join(viewsDir, 'faceRecognition.html')))
-app.get('/video_face_tracking', (req, res) => res.sendFile(path.join(viewsDir, 'videoFaceTracking.html')))
+app.get('/video_face_detection', (req, res) => res.sendFile(path.join(viewsDir, 'videoFaceDetection.html')))
 
 app.post('/fetch_external_image', async (req, res) => {
     const { imageUrl } = req.body
