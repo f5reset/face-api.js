@@ -25,7 +25,7 @@ async function requestExternalImage(imageUrl) {
 function renderNavBar(navbarId, exampleUri) {
   const examples = [
       {
-          uri: 'face_and_landmark_detection',
+          uri: 'webcam_face_detection',
           name: 'Nhận diện khuôn mặt'
       },
       {
