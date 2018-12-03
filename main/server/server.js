@@ -17,9 +17,23 @@ app.use(express.static(path.join(__dirname, '../../dist')))
 
 app.get('/', (req, res) => res.redirect('/webcam_face_detection'))
 app.get('/webcam_face_detection', (req, res) => res.sendFile(path.join(viewsDir, 'webcamFaceDetection.html')))
+app.get('/bbt_face_recognition', (req, res) => res.sendFile(path.join(viewsDir, 'bbtFaceRecognition.html')))
 app.get('/face_recognition', (req, res) => res.sendFile(path.join(viewsDir, 'faceRecognition.html')))
 app.get('/video_face_tracking', (req, res) => res.sendFile(path.join(viewsDir, 'videoFaceTracking.html')))
 
+app.post('/fetch_external_image', async (req, res) => {
+    const { imageUrl } = req.body
+    if (!imageUrl) {
+        return res.status(400).send('imageUrl param required')
+    }
+    try {
+        const externalResponse = await request(imageUrl)
+        res.set('content-type', externalResponse.headers['content-type'])
+        return res.status(202).send(Buffer.from(externalResponse.body))
+    } catch (err) {
+        return res.status(404).send(err.toString())
+    }
+})
 
 app.listen(3000, () => console.log('Listening on port 3000!'))
 

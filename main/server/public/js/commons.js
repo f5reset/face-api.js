@@ -26,6 +26,10 @@ function renderNavBar(navbarId, exampleUri) {
   const examples = [
       {
           uri: 'webcam_face_detection',
+          name: 'Phát hiện khuôn mặt'
+      },
+      {
+          uri: 'bbt_face_recognition',
           name: 'Nhận diện khuôn mặt'
       },
       {
@@ -34,7 +38,7 @@ function renderNavBar(navbarId, exampleUri) {
       },
       {
           uri: 'video_face_tracking',
-          name: 'Nhận diện khuôn mặt Video'
+          name: 'Phát hiện khuôn mặt Video'
       },
   ]
 
