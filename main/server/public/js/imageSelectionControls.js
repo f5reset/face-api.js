@@ -11,7 +11,7 @@ async function loadImageFromUrl(url) {
 }
 
 function renderImageSelectList(selectListId, onChange, initialValue) {
-  const images = [1, 2, 3, 4, 5].map(idx => `bbt${idx}.jpg`)
+  const images = [1, 2, 3, 4, 5, 6, 7].map(idx => `bbt${idx}.jpg`)
   function renderChildren(select) {
     images.forEach(imageName =>
       renderOption(

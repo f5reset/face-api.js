@@ -37,7 +37,7 @@ function renderNavBar(navbarId, exampleUri) {
           name: 'So sánh khuôn mặt '
       },
       {
-          uri: 'video_face_tracking',
+          uri: 'video_face_detection',
           name: 'Phát hiện khuôn mặt Video'
       },
   ]
